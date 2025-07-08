@@ -543,7 +543,7 @@ export default function Home() {
           background: #1a1a1a;
           border-top: 1px solid #333;
           padding: 16px;
-          margin: 16px 0 8px 0;
+          margin-top: auto;
           min-height: 250px;
           display: flex;
           flex-direction: column;
@@ -896,15 +896,15 @@ export default function Home() {
             <span className="icon">📚</span>
             <span>quiet_study.exe</span>
           </div>
-          
-          <div className="ads-container">
-            <div className="ads-label">Advertisement</div>
-            <div id="google-ads-container">
-              <ins className="adsbygoogle"
-                   style={{display: 'inline-block', width: '240px', height: '200px'}}
-                   data-ad-client="ca-pub-7522569213731555"
-                   data-ad-slot="7183168015"></ins>
-            </div>
+        </div>
+        
+        <div className="ads-container">
+          <div className="ads-label">Advertisement</div>
+          <div id="google-ads-container">
+            <ins className="adsbygoogle"
+                 style={{display: 'inline-block', width: '240px', height: '200px'}}
+                 data-ad-client="ca-pub-7522569213731555"
+                 data-ad-slot="7183168015"></ins>
           </div>
         </div>
       </div>
