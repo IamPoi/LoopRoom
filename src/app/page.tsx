@@ -3,9 +3,18 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 
+interface ModuleData {
+  name: string;
+  messages: string[];
+  particles: string[];
+  particleClass: string;
+}
+
+type ModuleType = 'rain' | 'birds' | 'cafe' | 'keyboard' | 'office' | 'library';
+
 export default function Home() {
   useEffect(() => {
-    const modules = {
+    const modules: Record<ModuleType, ModuleData> = {
       rain: {
         name: 'RAIN_AMBIENT',
         messages: [
@@ -124,12 +133,12 @@ export default function Home() {
     ];
 
     let state = {
-      currentModule: 'rain',
+      currentModule: 'rain' as ModuleType,
       isPlaying: false,
       isFullscreen: false,
       messageIndex: 0,
       isTyping: false,
-      audioElement: null,
+      audioElement: null as HTMLAudioElement | null,
       commandIndex: 0,
       isTypingCommand: false
     };
@@ -260,7 +269,7 @@ export default function Home() {
       }
     }
 
-    function switchModule(type: string) {
+    function switchModule(type: ModuleType) {
       if (state.currentModule === type) return;
       
       state.currentModule = type;
@@ -355,8 +364,8 @@ export default function Home() {
 
     document.querySelectorAll('.menu-item').forEach(item => {
       item.addEventListener('click', () => {
-        const type = item.getAttribute('data-type');
-        if (type) {
+        const type = item.getAttribute('data-type') as ModuleType;
+        if (type && ['rain', 'birds', 'cafe', 'keyboard', 'office', 'library'].includes(type)) {
           switchModule(type);
         }
       });
@@ -377,8 +386,11 @@ export default function Home() {
         }
         toggleFullscreen();
       } else if (e.key >= '1' && e.key <= '6') {
-        const mods = ['rain', 'birds', 'cafe', 'keyboard', 'office', 'library'];
-        switchModule(mods[parseInt(e.key) - 1]);
+        const mods: ModuleType[] = ['rain', 'birds', 'cafe', 'keyboard', 'office', 'library'];
+        const selectedMod = mods[parseInt(e.key) - 1];
+        if (selectedMod) {
+          switchModule(selectedMod);
+        }
       }
     };
 
