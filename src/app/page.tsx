@@ -409,9 +409,24 @@ export default function Home() {
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('fullscreenchange', handleFullscreenChange);
 
+    // Initialize AdSense
+    const initializeAds = () => {
+      try {
+        if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        }
+      } catch (error) {
+        console.error('AdSense initialization failed:', error);
+      }
+    };
+
     // Initialize
     updateTime();
     updateMessage();
+    
+    // Initialize ads after a short delay to ensure DOM is ready
+    setTimeout(initializeAds, 1000);
+    
     const timeInterval = setInterval(updateTime, 1000);
     const messageInterval = setInterval(updateMessage, 8000);
     const particlesInterval = setInterval(createParticles, 100);
@@ -536,20 +551,17 @@ export default function Home() {
           justify-content: center;
         }
         
-        .ads-placeholder {
+        #google-ads-container {
           width: 100%;
-          height: 200px;
-          background: #2d2d30;
-          border: 1px dashed #555;
-          border-radius: 4px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #888;
-          font-size: 12px;
-          text-align: center;
-          font-family: 'JetBrains Mono', monospace;
-          line-height: 1.4;
+        }
+        
+        .adsbygoogle {
+          background: #2d2d30;
+          border-radius: 4px;
+          border: 1px solid #444;
         }
         
         .ads-label {
@@ -851,7 +863,7 @@ export default function Home() {
           .terminal-window { width: 95%; height: 600px; }
           .time-display { font-size: 48px; }
           .ads-container { min-height: 200px; padding: 12px; margin: 12px 0 4px 0; }
-          .ads-placeholder { height: 150px; }
+          .adsbygoogle { width: 200px !important; height: 150px !important; }
         }
       `}</style>
 
@@ -887,16 +899,11 @@ export default function Home() {
           
           <div className="ads-container">
             <div className="ads-label">Advertisement</div>
-            <div className="ads-placeholder" id="google-ads-container">
-              <div>
-                Google Ads<br/>
-                240 x 200<br/>
-                <br/>
-                <span style={{fontSize: '10px', color: '#666'}}>
-                  Insert your Google AdSense<br/>
-                  code here
-                </span>
-              </div>
+            <div id="google-ads-container">
+              <ins className="adsbygoogle"
+                   style={{display: 'inline-block', width: '240px', height: '200px'}}
+                   data-ad-client="ca-pub-7522569213731555"
+                   data-ad-slot="7183168015"></ins>
             </div>
           </div>
         </div>
