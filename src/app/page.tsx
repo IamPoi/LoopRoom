@@ -521,6 +521,44 @@ export default function Home() {
         .menu-list {
           flex: 1;
           padding: 8px 0;
+          overflow-y: auto;
+        }
+        
+        .ads-container {
+          background: #1a1a1a;
+          border-top: 1px solid #333;
+          padding: 16px;
+          margin-top: auto;
+          min-height: 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .ads-placeholder {
+          width: 100%;
+          height: 200px;
+          background: #2d2d30;
+          border: 1px dashed #555;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #888;
+          font-size: 12px;
+          text-align: center;
+          font-family: 'JetBrains Mono', monospace;
+          line-height: 1.4;
+        }
+        
+        .ads-label {
+          color: #666;
+          font-size: 10px;
+          font-family: 'JetBrains Mono', monospace;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 8px;
         }
         
         .menu-item {
@@ -843,6 +881,21 @@ export default function Home() {
           <div className="menu-item" data-type="library">
             <span className="icon">📚</span>
             <span>quiet_study.exe</span>
+          </div>
+        </div>
+        
+        <div className="ads-container">
+          <div className="ads-label">Advertisement</div>
+          <div className="ads-placeholder" id="google-ads-container">
+            <div>
+              Google Ads<br/>
+              240 x 200<br/>
+              <br/>
+              <span style={{fontSize: '10px', color: '#666'}}>
+                Insert your Google AdSense<br/>
+                code here
+              </span>
+            </div>
           </div>
         </div>
       </div>
