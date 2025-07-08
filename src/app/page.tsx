@@ -848,6 +848,15 @@ export default function Home() {
           font-family: 'JetBrains Mono', monospace;
         }
         
+        .help-line {
+          position: absolute;
+          bottom: 8px;
+          right: 20px;
+          color: #444;
+          font-size: 11px;
+          font-family: 'JetBrains Mono', monospace;
+        }
+        
         .rain-char { color: #00aaff; }
         .bird-char { color: #ffaa00; }
         .cafe-char { color: #aa7700; }
@@ -960,6 +969,7 @@ export default function Home() {
             </div>
             
             <div className="status-line" id="statusLine">STATUS: READY | MODULE: RAIN_AMBIENT | PID: 1337</div>
+            <div className="help-line">Press F11 for fullscreen</div>
           </div>
         </div>
       </div>

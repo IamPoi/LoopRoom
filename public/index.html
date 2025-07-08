@@ -6,14 +6,14 @@
     <meta name="google-adsense-account" content="ca-pub-7522569213731555">
     
     <!-- SEO Meta Tags -->
-    <title>Loop Room - Coding ASMR & LoFi Study Sounds</title>
+    <title>Loop Room</title>
     <meta name="description" content="Terminal-style interface for coding ASMR, LoFi beats, and ambient study sounds. Perfect for programming, focus, and relaxation.">
     <meta name="keywords" content="coding, asmr, lofi, study, healing, ambient, focus, programming, terminal, white noise, productivity, relaxation">
     <meta name="author" content="Loop Room">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Loop Room - Coding ASMR & LoFi Study Sounds">
+    <meta property="og:title" content="Loop Room">
     <meta property="og:description" content="Terminal-style interface for coding ASMR, LoFi beats, and ambient study sounds">
     <meta property="og:url" content="https://loop-room-seven.vercel.app">
     <meta property="og:site_name" content="Loop Room">
@@ -22,7 +22,7 @@
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Loop Room - Coding ASMR & LoFi Study Sounds">
+    <meta name="twitter:title" content="Loop Room">
     <meta name="twitter:description" content="Terminal-style interface for coding ASMR, LoFi beats, and ambient study sounds">
     
     <!-- Favicon -->
@@ -437,6 +437,15 @@
             font-family: 'JetBrains Mono', monospace;
         }
         
+        .help-line {
+            position: absolute;
+            bottom: 8px;
+            right: 20px;
+            color: #444;
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
         /* 타입별 파티클 */
         .rain-char { color: #00aaff; }
         .bird-char { color: #ffaa00; }
@@ -551,6 +560,7 @@
                 </div>
                 
                 <div class="status-line" id="statusLine">STATUS: READY | MODULE: RAIN_AMBIENT | PID: 1337</div>
+                <div class="help-line">Press F11 for fullscreen</div>
             </div>
         </div>
     </div>
