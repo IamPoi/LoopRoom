@@ -528,7 +528,7 @@ export default function Home() {
           background: #1a1a1a;
           border-top: 1px solid #333;
           padding: 16px;
-          margin-top: auto;
+          margin: 16px 0 8px 0;
           min-height: 250px;
           display: flex;
           flex-direction: column;
@@ -850,6 +850,8 @@ export default function Home() {
           .main-terminal.fullscreen { margin-left: 0; margin-top: -200px; }
           .terminal-window { width: 95%; height: 600px; }
           .time-display { font-size: 48px; }
+          .ads-container { min-height: 200px; padding: 12px; margin: 12px 0 4px 0; }
+          .ads-placeholder { height: 150px; }
         }
       `}</style>
 
@@ -882,19 +884,19 @@ export default function Home() {
             <span className="icon">📚</span>
             <span>quiet_study.exe</span>
           </div>
-        </div>
-        
-        <div className="ads-container">
-          <div className="ads-label">Advertisement</div>
-          <div className="ads-placeholder" id="google-ads-container">
-            <div>
-              Google Ads<br/>
-              240 x 200<br/>
-              <br/>
-              <span style={{fontSize: '10px', color: '#666'}}>
-                Insert your Google AdSense<br/>
-                code here
-              </span>
+          
+          <div className="ads-container">
+            <div className="ads-label">Advertisement</div>
+            <div className="ads-placeholder" id="google-ads-container">
+              <div>
+                Google Ads<br/>
+                240 x 200<br/>
+                <br/>
+                <span style={{fontSize: '10px', color: '#666'}}>
+                  Insert your Google AdSense<br/>
+                  code here
+                </span>
+              </div>
             </div>
           </div>
         </div>
