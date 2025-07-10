@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7522569213731555">
+    
+    <!-- SEO Meta Tags -->
+    <title>Loop Room - 도움말</title>
+    <meta name="description" content="Loop Room 사용법 안내 - 터미널 스타일 코딩 ASMR, LoFi 음악, 환경음 사용법을 자세히 알아보세요.">
+    <meta name="keywords" content="Loop Room, 사용법, 도움말, 코딩 ASMR, LoFi, 환경음, 터미널, 사용 가이드">
+    <meta name="author" content="Loop Room">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Loop Room - 도움말">
+    <meta property="og:description" content="Loop Room 사용법 안내 - 터미널 스타일 코딩 ASMR, LoFi 음악, 환경음 사용법">
+    <meta property="og:url" content="https://loop-room-seven.vercel.app/help">
+    <meta property="og:site_name" content="Loop Room">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loop Room - 도움말">
+    <meta name="twitter:description" content="Loop Room 사용법 안내 - 터미널 스타일 코딩 ASMR, LoFi 음악, 환경음 사용법">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7522569213731555"
+            crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0c0c0c;
+            color: #c5c5c5;
+            font-family: 'Noto Sans KR', 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            color: #00ff41;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+            margin-bottom: 20px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            background: #1e1e1e;
+            color: #00ff41;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: #2a2d2e;
+            border-color: #00ff41;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .section {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        
+        .section h2 {
+            color: #00ff41;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .section h3 {
+            color: #74c0fc;
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .section li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .section li:last-child {
+            border-bottom: none;
+        }
+        
+        .key {
+            display: inline-block;
+            background: #2d2d30;
+            color: #ffdd00;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        
+        .sound-module {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .sound-module .icon {
+            font-size: 20px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .sound-module .name {
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ff41;
+        }
+        
+        .sound-module .description {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .tips {
+            background: #2d2d30;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #00ff41;
+            margin: 20px 0;
+        }
+        
+        .tips h4 {
+            color: #00ff41;
+            margin-bottom: 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        
+        .feature-item h3 {
+            color: #74c0fc;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .feature-item p {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .ads-section {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .ads-section h3 {
+            color: #666;
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: #00ff41;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Loop Room</h1>
+            <p>터미널 스타일 코딩 ASMR 및 환경음 플랫폼 사용법</p>
+        </div>
+        
+        <a href="/" class="back-button">← 메인으로 돌아가기</a>
+        
+        <div class="content">
+            <div class="section">
+                <h2>🎵 사운드 모듈</h2>
+                <p>다양한 환경음과 ASMR 사운드를 즐기세요.</p>
+                
+                <div class="sound-module">
+                    <span class="icon">🌧️</span>
+                    <span class="name">rain_ambient.exe</span>
+                    <span class="description">- 빗소리 ASMR</span>
+                </div>
+                
+                <div class="sound-module">
+                    <span class="icon">🐦</span>
+                    <span class="name">forest_birds.exe</span>
+                    <span class="description">- 새소리 자연음</span>
+                </div>
+                
+                <div class="sound-module">
+                    <span class="icon">☕</span>
+                    <span class="name">cafe_noise.exe</span>
+                    <span class="description">- 카페 소음</span>
+                </div>
+                
+                <div class="sound-module">
+                    <span class="icon">⌨️</span>
+                    <span class="name">mech_keys.exe</span>
+                    <span class="description">- 기계식 키보드</span>
+                </div>
+                
+                <div class="sound-module">
+                    <span class="icon">🏢</span>
+                    <span class="name">office_ambient.exe</span>
+                    <span class="description">- 사무실 환경음</span>
+                </div>
+                
+                <div class="sound-module">
+                    <span class="icon">📚</span>
+                    <span class="name">quiet_study.exe</span>
+                    <span class="description">- 조용한 학습 환경</span>
+                </div>
+                
+                <div class="tips">
+                    <h4>💡 팁</h4>
+                    <p>각 사운드 모듈을 클릭하면 해당 환경음으로 전환됩니다. 상황에 맞는 사운드를 선택하여 집중력을 높이세요.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>⌨️ 키보드 단축키</h2>
+                <p>효율적인 사용을 위한 키보드 단축키를 활용하세요.</p>
+                
+                <ul>
+                    <li><span class="key">Space</span> 재생/정지</li>
+                    <li><span class="key">F</span> 전체화면 토글</li>
+                    <li><span class="key">F11</span> 브라우저 전체화면</li>
+                    <li><span class="key">1-6</span> 사운드 모듈 전환</li>
+                </ul>
+                
+                <h3>🎮 컨트롤</h3>
+                <ul>
+                    <li><strong>RUN/STOP</strong> - 사운드 재생/정지</li>
+                    <li><strong>EXPAND/RESTORE</strong> - 사이드바 숨기기/보이기</li>
+                    <li><strong>VOL</strong> - 볼륨 조절 슬라이더</li>
+                </ul>
+                
+                <div class="tips">
+                    <h4>⚡ 빠른 사용법</h4>
+                    <p>스페이스바를 누르면 즉시 재생/정지할 수 있습니다. 숫자키 1-6으로 원하는 사운드 모듈을 빠르게 전환하세요.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🖥️ 터미널 인터페이스</h2>
+                <p>실제 개발 환경과 같은 터미널 인터페이스를 제공합니다.</p>
+                
+                <h3>화면 구성</h3>
+                <ul>
+                    <li><strong>실시간 시계</strong> - 현재 시간과 날짜 표시</li>
+                    <li><strong>명령어 시뮬레이션</strong> - 실제 터미널 명령어들이 자동으로 실행</li>
+                    <li><strong>상태 표시</strong> - 현재 실행 중인 모듈과 PID 정보</li>
+                    <li><strong>매트릭스 파티클</strong> - 배경의 동적 파티클 효과</li>
+                </ul>
+                
+                <div class="tips">
+                    <h4>🎯 집중 모드</h4>
+                    <p>전체화면 모드(F11)를 사용하면 더욱 몰입적인 환경에서 작업할 수 있습니다.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🎧 사용 시나리오</h2>
+                <p>다양한 상황에서 Loop Room을 활용해보세요.</p>
+                
+                <h3>코딩 작업</h3>
+                <ul>
+                    <li>기계식 키보드 사운드로 타이핑 감각 향상</li>
+                    <li>빗소리나 카페 소음으로 집중력 증진</li>
+                    <li>터미널 화면으로 개발자 감성 연출</li>
+                </ul>
+                
+                <h3>학습 & 독서</h3>
+                <ul>
+                    <li>조용한 도서관 환경 (quiet_study.exe)</li>
+                    <li>자연음으로 편안한 분위기 조성</li>
+                    <li>사무실 환경음으로 업무 집중력 향상</li>
+                </ul>
+                
+                <div class="tips">
+                    <h4>🌟 추천 설정</h4>
+                    <p>작업 유형에 따라 볼륨을 30-70% 수준으로 조절하고, 전체화면 모드를 활용하면 최상의 경험을 얻을 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ads-section">
+            <h3>Advertisement</h3>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7522569213731555"
+                 data-ad-slot="7183168015"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+        
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>🎨 터미널 테마</h3>
+                <p>실제 개발 환경과 같은 다크 테마 터미널 인터페이스</p>
+            </div>
+            
+            <div class="feature-item">
+                <h3>⏰ 실시간 시계</h3>
+                <p>디지털 시계와 날짜 표시로 시간 관리</p>
+            </div>
+            
+            <div class="feature-item">
+                <h3>🔊 고품질 사운드</h3>
+                <p>ASMR과 환경음의 최적화된 음질</p>
+            </div>
+            
+            <div class="feature-item">
+                <h3>📱 반응형 디자인</h3>
+                <p>데스크톱과 모바일 모든 환경에서 최적화</p>
+            </div>
+            
+            <div class="feature-item">
+                <h3>🎯 집중 지원</h3>
+                <p>업무와 학습에 최적화된 사운드 환경</p>
+            </div>
+            
+            <div class="feature-item">
+                <h3>⚡ 즉시 실행</h3>
+                <p>별도 설치 없이 브라우저에서 바로 사용</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 Loop Room. 터미널 스타일 코딩 ASMR 플랫폼</p>
+            <p><a href="/">메인으로 돌아가기</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize AdSense
+        function initializeAds() {
+            try {
+                if (typeof window !== 'undefined' && window.adsbygoogle) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+            } catch (error) {
+                console.error('AdSense initialization failed:', error);
+            }
+        }
+        
+        // Initialize ads after DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initializeAds, 1000);
+        });
+    </script>
+</body>
+</html>
